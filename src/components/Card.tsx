@@ -1,5 +1,5 @@
 import React from 'react';
-import { Task, Status, STATUSES } from '../types/todo';
+import { Task, Status, LANE_TYPE } from '../types/todo';
 import './Card.css';
 
 export type CardProps = {
@@ -10,14 +10,14 @@ export type CardProps = {
 };
 
 const Card = ({ task, onInputText, onMove, onDelete }: CardProps) => {
-  const currentIndex = STATUSES.indexOf(task.status);
+  const currentIndex = LANE_TYPE.indexOf(task.status);
   const isFirst = currentIndex === 0;
-  const isLast = currentIndex === STATUSES.length - 1;
+  const isLast = currentIndex === LANE_TYPE.length - 1;
   const moveLeft = () => {
-    if (!isFirst) onMove(task.id, STATUSES[currentIndex - 1]);
+    if (!isFirst) onMove(task.id, LANE_TYPE[currentIndex - 1]);
   };
   const moveRight = () => {
-    if (!isLast) onMove(task.id, STATUSES[currentIndex + 1]);
+    if (!isLast) onMove(task.id, LANE_TYPE[currentIndex + 1]);
   };
   return (
     <div className="card">

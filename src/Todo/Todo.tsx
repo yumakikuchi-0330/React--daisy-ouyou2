@@ -1,7 +1,7 @@
 import './Todo.css';
 import Lane from '../components/Lane';
 import React, { useState } from 'react';
-import { Task, Status, STATUSES, STATUS_LABEL } from '../types/todo';
+import { Task, Status, LANE_TYPE, STATUS_LABEL } from '../types/todo';
 
 function Todo() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -30,7 +30,7 @@ function Todo() {
     <div className="main">
       <h1>TODO List</h1>
       <div className="lanes">
-        {STATUSES.map((status) => (
+        {LANE_TYPE.map((status) => (
           <Lane
             key={status}
             title={STATUS_LABEL[status]}

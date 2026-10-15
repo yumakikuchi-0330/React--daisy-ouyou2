@@ -1,5 +1,5 @@
-export const STATUSES = ['todo', 'in_progress', 'done'] as const;
-export type Status = (typeof STATUSES)[number];
+export type Status = 'todo' | 'in_progress' | 'done';
+export const LANE_TYPE: Status[] = ['todo', 'in_progress', 'done'];
 
 export const STATUS_LABEL: Record<Status, string> = {
   todo: 'ToDo',
